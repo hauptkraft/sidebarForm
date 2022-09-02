@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Club</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="menu__side">
+        <div class="page__wrap">
+            <div class="page__name">
+                <div class="img__wrap">
+                    <img class="img" src="/asset/img/Interface.png" alt="smile">
+                </div>
+                <div class="profile">
+                    <h4>Михаил Мингалёв</h4>
+                    <h5>Покупатель</h5>
+                </div>
+            </div>
+        </div>
+        <div class="options__menu">	
+            <a href="#" class="selected">
+                <div class="option">
+                    <p>Мой профиль</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <p>Statut Club</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <p>Заказы</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <p>Избранные товары</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <p>Отзывы о товарах</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="option">
+                    <p>Выход</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="form__wrap">
+        <div class="form__container">
+            <p>Мой профиль</p>
+            <nav>
+                <ul class="form__header">
+                    <li><a href="#">Личные данные</a></li>
+                    <li><a href="#">Адреса доставки</a></li>
+                    <li><a href="#">Пароль</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="form-fields">
+            <!-- Ввод email -->
+            <div class="form-field__wrap">
+                <label class="form-field__label" for="text">E-mail</label>
+                <div class="form-field">
+                    <input class="form-field-input" type="email" placeholder="" value="mingalyovuxcheck@gmail.com">
+                    <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon3.svg" alt="image"></button>
+                </div>
+            </div>
+            <!-- Ввод номера телефона -->
+            <div class="form-phone__wrap">
+                <div class="form-phone__container">
+                    <label class="form-field__label" for="number">Номер телефона</label>
+                    <div class="form-phone">
+                        <input class="form-phone-input" type="number" placeholder="+7" value="">
+                        <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon3.svg" alt="image"></button>
+                    </div>
+                </div>
+                <div class="form-phone__container">
+                    <label class="form-field__label" for="number">Дополнительный номер</label>
+                    <div class="form-phone">
+                        <input class="form-phone-input" type="number" placeholder="" value="">
+                    </div>
+                </div>
+            </div>
+            <!-- Выбор фамилии -->
+            <div class="form-field__wrap">
+                <label class="form-field__label" for="text">Фамилия</label>
+                <div class="form-field">
+                    <input class="form-field-input" type="text" placeholder="" value="Мингалёв">
+                    <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
+                </div>
+            </div>
+            <!-- Выбор имени -->
+            <div class="form-field__wrap">
+                <label class="form-field__label" for="text">Имя</label>
+                <div class="form-field">
+                    <input class="form-field-input" type="text" placeholder="" value="Михаил">
+                    <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
+                </div>
+            </div>
+            <!-- Выбор отчества -->
+            <div class="form-field__wrap">
+                <label class="form-field__label" for="text">Отчество</label>
+                <div class="form-field">
+                    <input class="form-field-input" type="text" placeholder="" value="Михайлович">
+                    <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
+                </div>
+            </div>
+            <!-- Выбор даты -->
+            <div class="form-data__wrap">
+                <label class="form-field__label" for="data">Дата рождения</label>
+                <div class="form-data__container">
+                    <div class="select-wrapper">
+                    <select class="wrap-data data-day" name="Day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option selected value="23">23</option>
+                    </select>
+                    </div>
+                    <select class="wrap-data data-month" name="Month">
+                        <option value="Октября">Октября</option>
+                        <option value="Ноября">Ноября</option>
+                        <option value="Декабря">Декабря</option>
+                        <option value="Января">Января</option>
+                        <option selected value="Сентября">Сентября</option>
+                    </select>
+                    <select class="wrap-data data-year" name="Year">
+                        <option value="1994">1994</option>
+                        <option value="1995">1995</option>
+                        <option value="1996">1996</option>
+                        <option value="1997">1997</option>
+                        <option selected value="1993">1993</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Выбор пола -->
+            <div class="form-field__wrap">
+                <div class="gender__wrap">
+                    <label class="form-field__label" for="data">Пол</label>
+                    <div class="gender__container">
+                        <button class="gender-btn" type="button"><p>Мужской</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img"></button>
+                        <button class="gender-btn" type="button"><p>Женский</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img"></button>
+                    </div>
+                </div>
+                <button class="main-btn">Сохранить изменения</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
