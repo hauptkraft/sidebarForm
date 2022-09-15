@@ -24,8 +24,11 @@ if (!empty($_POST)) {
     $year = $_POST['year'];
     $gender = $_POST['gender'];
 
-    $message = 'Пользователь' . $_POST['name']  . $_POST['surname'] . '<br />'
-        . $_POST['patronymic'] . '">' . $_POST['email'] . '</a>';
+    $message = 'Пользователь:' . $name  . $surname . $patronymic . "<br />"
+        . 'emai:' . $email . "</br>"
+        . 'номера телефонов' . $phone . 'и' . $phone2 . "</br>"
+        . 'Дата рождения' . $day . $mounth . $year
+        . 'Пол' . $gender;
 
     $headers = "Content-type: text/html; charset=utf-8\r\n";
     $headers .= $from;
