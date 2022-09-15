@@ -293,6 +293,8 @@ input::-webkit-inner-spin-button {
     margin-left: 0;
 }
 
+/* ///////////////////////////////// gender styles /////////////////////// */
+
 .gender__container {
     display: flex;
 }
@@ -307,6 +309,8 @@ input::-webkit-inner-spin-button {
     position: relative;
 }
 .gender-btn p{
+    margin-top: 7px;
+    margin-left: 19px;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -348,3 +352,62 @@ input::-webkit-inner-spin-button {
     margin-bottom: 45px;
     cursor: pointer;
 }
+
+.main-btn input[type="button"]{
+    width: 270px;
+    height: 50px;
+    background: #FF7A00;
+    border: 5px solid #FF7A00;
+    border-radius: 5px;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ////////////РАЗОБРАТЬСЯ БЛЯТЬ////////////// */
+.gender-btn:hover img {
+    display: block;
+    right: 15px;
+}
+
+/* ////////////////////// тут формы для пола ///////////////////////////// */
+
+input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked+label  {
+    color: #fffffb;
+    background-image: linear-gradient(to bottom, #ffffff, #ffffff);
+    /* display: block; */
+
+  }
+  label[id="male"],
+  label[id="female"] {
+    display: block;
+    float: left;
+    padding: 5px 10px;
+    
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    
+    background-image: linear-gradient(to bottom, #fff, #ddd);
+    border: 1px solid #9e9fa1;
+    cursor: pointer;
+  }
+  label[id="male"] {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  label[id="female"] {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -1px;
+  }
+  label[id="male"]:hover,
+  label[id="female"]:hover .gender-btn img{
+    /* background-image: linear-gradient(to bottom, #fff, #b9b9b9); */
+    display: block;
+    /* right: 15px; */
+  }
