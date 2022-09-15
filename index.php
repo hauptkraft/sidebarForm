@@ -4,9 +4,37 @@ require_once __DIR__ . '/asset/data.php';
 require_once __DIR__ . '/asset/functions.php';
 
 if (!empty($_POST)) {
-    debug($_POST);
+    // debug($_POST);
     $fields = load($fields);
-    debug($fields);
+    // debug($fields);
+    $res = ['answer' => 'ok', 'data' => $fields];
+    // exit(json_encode($res));
+    // print_r($_POST);
+    $to = 'salbiev.t99@mail.ru';
+    $from = 'Заявка с сайта <test@test.ru>\n\r';
+    // данные в POST
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $phone2 = $_POST['phone2'];
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $patronymic = $_POST['patronymic'];
+    $day = $_POST['day'];
+    $month = $_POST['month'];
+    $year = $_POST['year'];
+    $gender = $_POST['gender'];
+
+    $message = 'Пользователь' . $_POST['name']  . $_POST['surname'] . '<br />'
+        . $_POST['patronymic'] . '">' . $_POST['email'] . '</a>';
+
+    $headers = "Content-type: text/html; charset=utf-8\r\n";
+    $headers .= $from;
+
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        mail($to, $from, $message, $headers);
+    } else {
+        echo 'не отправилось';
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -77,18 +105,13 @@ if (!empty($_POST)) {
                 </ul>
             </nav>
         </div>
-        <form action="#" class="form-fields" method="post">
+        <form action="#" class="form-fields" method="post" id="form">
             <!-- Ввод email -->
             <div class="form-field__wrap">
                 <label class="form-field__label" for="email">E-mail</label>
                 <div class="form-field">
-<<<<<<< HEAD:index.php
                     <input class="form-field-input" type="email" placeholder="" value="mingalyovuxcheck@gmail.com" id="email" name="email">
                     <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon3.svg" alt="image"></button>
-=======
-                    <input class="form-field-input" type="email" placeholder="" value="mingalyovuxcheck@gmail.com">
-                    <button class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon3.svg" alt="image"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                 </div>
             </div>
             <!-- Ввод номера телефона -->
@@ -96,13 +119,8 @@ if (!empty($_POST)) {
                 <div class="form-phone__container">
                     <label class="form-field__label" for="phone">Номер телефона</label>
                     <div class="form-phone">
-<<<<<<< HEAD:index.php
                         <input class="form-phone-input" type="number" placeholder="+7" value="" id="phone" name="phone" pattern="^[ 0-9]+$">
                         <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon3.svg" alt="image"></button>
-=======
-                        <input class="form-phone-input" type="number" placeholder="+7" value="">
-                        <button class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon3.svg" alt="image"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                     </div>
                 </div>
                 <div class="form-phone__container">
@@ -116,39 +134,24 @@ if (!empty($_POST)) {
             <div class="form-field__wrap">
                 <label class="form-field__label" for="surname">Фамилия</label>
                 <div class="form-field">
-<<<<<<< HEAD:index.php
                     <input class="form-field-input" type="text" placeholder="" value="Мингалёв" id="surname" name="surname">
                     <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
-=======
-                    <input class="form-field-input" type="text" placeholder="" value="Мингалёв">
-                    <button class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                 </div>
             </div>
             <!-- Выбор имени -->
             <div class="form-field__wrap">
                 <label class="form-field__label" for="name">Имя</label>
                 <div class="form-field">
-<<<<<<< HEAD:index.php
                     <input class="form-field-input" type="text" placeholder="" value="Михаил" id="name" name="name">
                     <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
-=======
-                    <input class="form-field-input" type="text" placeholder="" value="Михаил">
-                    <button class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                 </div>
             </div>
             <!-- Выбор отчества -->
             <div class="form-field__wrap">
                 <label class="form-field__label" for="patronymic">Отчество</label>
                 <div class="form-field">
-<<<<<<< HEAD:index.php
                     <input class="form-field-input" type="text" placeholder="" value="Михайлович" id="patronymic" name="patronymic">
                     <button class="form-btn__check"><img class="form-btn__image" src="/asset/img/Icon2.png" alt="image"></button>
-=======
-                    <input class="form-field-input" type="text" placeholder="" value="Михайлович">
-                    <button class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                 </div>
             </div>
             <!-- Выбор даты -->
@@ -185,7 +188,6 @@ if (!empty($_POST)) {
                 <div class="gender__wrap">
                     <label class="form-field__label" for="data">Пол</label>
                     <div class="gender__container">
-<<<<<<< HEAD:index.php
                         <!-- <button class="gender-btn" name="" type="button"><p>Мужской</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img"></button> -->
                         <!-- <button class="gender-btn" name="" type="button"><p>Женский</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img"></button> -->
 
@@ -198,10 +200,6 @@ if (!empty($_POST)) {
                         <label class="gender-btn" for="female" id="female" value="female">
                             <p>Женский</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img">
                         </label>
-=======
-                        <button class="gender-btn" type="button"><p>Мужской</p><img class="gender-img" src="asset/img/Icon2.png" alt="img"></button>
-                        <button class="gender-btn" type="button"><p>Женский</p><img class="gender-img" src="asset/img/Icon2.png" alt="img"></button>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html
                     </div>
                 </div>
 
@@ -216,13 +214,13 @@ if (!empty($_POST)) {
                 <!-- <input type="button" value="Send" class="main-btn"> -->
             </div>
             <button class="main-btn" type="submit">Сохранить изменения</button>
+            <div class="loader">
+                <img src="asset/img/Ripple.svg" alt="loader">
+            </div>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="asset/script.js"></script>
 </body>
-<<<<<<< HEAD:index.php
 
 </html>
-=======
-</html>
->>>>>>> 08a82131b5661dba030708683ddb2421b19fca4e:index.html

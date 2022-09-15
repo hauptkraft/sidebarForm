@@ -1,3 +1,24 @@
-// document.querySelector(".form-phone-input").addEventListener("keyup", function(){
-//     this.value = this.value.replace( ^((\+7|7|8)+([0-9]){10})$ , "");
-// });
+$('#form').submit(function(e){
+    e.preventDefault();
+    let th = $(this);
+
+    $.ajax({
+        url: 'index.php', 
+        type: 'POST',
+        data: th.serialize(),
+        beforeSend: function()
+        {
+            $('.loader').fadeIn();
+        }, 
+        success: function()
+        {
+            $('.loader').fadeOut('slow', function(){
+                console.log("сообщение отправлено");
+            });
+        },
+        error: function()
+        {
+            alert('ошибка отправки');
+        }
+    });
+});
