@@ -1,5 +1,5 @@
 $('#form').submit(function(e){
-    e.preventDefault();
+    // e.preventDefault();
     let th = $(this);
 
     $.ajax({

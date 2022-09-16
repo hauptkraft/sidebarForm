@@ -5,11 +5,12 @@ require_once __DIR__ . '/asset/functions.php';
 
 if (!empty($_POST)) {
     // debug($_POST);
-    $fields = load($fields);
+    // $fields = load($fields);
     // debug($fields);
-    $res = ['answer' => 'ok', 'data' => $fields];
-    // exit(json_encode($res));
+    // var_dump($_POST);
+    // $res = ['answer' => 'ok', 'data' => $fields];
     // print_r($_POST);
+
     $to = 'salbiev.t99@mail.ru';
     $from = 'Заявка с сайта <test@test.ru>\n\r';
     // данные в POST
@@ -24,11 +25,12 @@ if (!empty($_POST)) {
     $year = $_POST['year'];
     $gender = $_POST['gender'];
 
-    $message = 'Пользователь:' . $name  . $surname . $patronymic . "<br />"
-        . 'emai:' . $email . "</br>"
-        . 'номера телефонов' . $phone . 'и' . $phone2 . "</br>"
-        . 'Дата рождения' . $day . $mounth . $year
-        . 'Пол' . $gender;
+    $message = 'Пользователь |' . ' Фамилия: ' .  $surname . ' Имя: ' . $name . ' Отчество: ' . $patronymic . "<br />"
+        . 'emai: ' . $email . "</br>"
+        . 'Основной номер телефона: ' . $phone . ' Второй номер телефона: ' . $phone2 . "</br>"
+        . 'Дата рождения |' . ' День: ' . $day . ' Месяц: ' . $mounth . ' Год: ' . $year . "</br>"
+        . 'Половая принадлежность: ' . $gender;
+
 
     $headers = "Content-type: text/html; charset=utf-8\r\n";
     $headers .= $from;
@@ -38,6 +40,8 @@ if (!empty($_POST)) {
     } else {
         echo 'не отправилось';
     }
+
+    // echo ($message);
 }
 ?>
 <!DOCTYPE html>
@@ -48,6 +52,7 @@ if (!empty($_POST)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/[uikit-version]/css/uikit.min.css" /> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -203,6 +208,23 @@ if (!empty($_POST)) {
                         <label class="gender-btn" for="female" id="female" value="female">
                             <p>Женский</p><img class="gender-img" src="/asset/img/Icon2.png" alt="img">
                         </label>
+
+                        <!-- <div class="uk-margin">
+                            <div uk-form-custom="target: > * > span:first-child">
+                                <select>
+                                    <option value="">Выберите...</option>
+                                    <option value="1">Опция 01</option>
+                                    <option value="2">Опция 02</option>
+                                    <option value="3">Опция 03</option>
+                                    <option value="4">Опция 04</option>
+                                </select>
+                                <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                                    <span></span>
+                                    <span uk-icon="icon: chevron-down"></span>
+                                </button>
+                            </div>
+                        </div> -->
+
                     </div>
                 </div>
 
@@ -223,6 +245,7 @@ if (!empty($_POST)) {
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
     <script src="asset/script.js"></script>
 </body>
 
