@@ -1,48 +1,48 @@
 <?php
 
-require_once __DIR__ . '/asset/data.php';
-require_once __DIR__ . '/asset/functions.php';
+// require_once __DIR__ . '/asset/data.php';
+// require_once __DIR__ . '/asset/functions.php';
 
-if (!empty($_POST)) {
-    // debug($_POST);
-    // $fields = load($fields);
-    // debug($fields);
-    // var_dump($_POST);
-    // $res = ['answer' => 'ok', 'data' => $fields];
-    // print_r($_POST);
+// if (!empty($_POST)) {
+// debug($_POST);
+// $fields = load($fields);
+// debug($fields);
+// var_dump($_POST);
+// $res = ['answer' => 'ok', 'data' => $fields];
+// print_r($_POST);
 
-    $to = 'salbiev.t99@mail.ru';
-    $from = 'Заявка с сайта <test@test.ru>\n\r';
-    // данные в POST
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $phone2 = $_POST['phone2'];
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $patronymic = $_POST['patronymic'];
-    $day = $_POST['day'];
-    $month = $_POST['month'];
-    $year = $_POST['year'];
-    $gender = $_POST['gender'];
+// $to = 'salbiev.t99@mail.ru';
+// $from = 'Заявка с сайта <test@test.ru>\n\r';
+// данные в POST
+// $email = $_POST['email'];
+// $phone = $_POST['phone'];
+// $phone2 = $_POST['phone2'];
+// $name = $_POST['name'];
+// $surname = $_POST['surname'];
+// $patronymic = $_POST['patronymic'];
+// $day = $_POST['day'];
+// $month = $_POST['month'];
+// $year = $_POST['year'];
+// $gender = $_POST['gender'];
 
-    $message = 'Пользователь |' . ' Фамилия: ' .  $surname . ' Имя: ' . $name . ' Отчество: ' . $patronymic . "<br />"
-        . 'emai: ' . $email . "</br>"
-        . 'Основной номер телефона: ' . $phone . ' Второй номер телефона: ' . $phone2 . "</br>"
-        . 'Дата рождения |' . ' День: ' . $day . ' Месяц: ' . $mounth . ' Год: ' . $year . "</br>"
-        . 'Половая принадлежность: ' . $gender;
+// $message = 'Пользователь |' . ' Фамилия: ' .  $surname . ' Имя: ' . $name . ' Отчество: ' . $patronymic . "<br />"
+//     . 'emai: ' . $email . "</br>"
+//     . 'Основной номер телефона: ' . $phone . ' Второй номер телефона: ' . $phone2 . "</br>"
+//     . 'Дата рождения |' . ' День: ' . $day . ' Месяц: ' . $mounth . ' Год: ' . $year . "</br>"
+//     . 'Половая принадлежность: ' . $gender;
 
 
-    $headers = "Content-type: text/html; charset=utf-8\r\n";
-    $headers .= $from;
+// $headers = "Content-type: text/html; charset=utf-8\r\n";
+// $headers .= $from;
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        mail($to, $from, $message, $headers);
-    } else {
-        echo 'не отправилось';
-    }
+// if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+//     mail($to, $from, $message, $headers);
+// } else {
+//     echo 'не отправилось';
+// }
 
-    // echo ($message);
-}
+// echo ($message);
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
