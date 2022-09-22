@@ -75,7 +75,8 @@ validation
         },
         {
             rule: 'function',
-            validator: function() {
+            validator: function() 
+            {
                 const phone = telSelector.inputmask.unmaskedvalue();
                 return phone.length === 10;
             },
