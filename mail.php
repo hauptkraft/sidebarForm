@@ -10,8 +10,10 @@ $c = true;
 
 // Формирование письма
 $title = "Заголовок";
-foreach ($_POST as $key => $value) {
-    if ($value != "") {
+foreach ($_POST as $key => $value) 
+{
+    if ($value != "") 
+    {
         $body .= "
     " . (($c = !$c) ? '<tr>' : '<tr style="background-color: #ffffff;">') . "
       <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
