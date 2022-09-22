@@ -324,8 +324,8 @@ input:-internal-autofill-selected {
     margin-left: 10px;
     height: 50px;
     border-radius: 5px;
-    /*background: #FFFFFF;*/
-    border: 1px solid #DFE2E4;
+    background: #FFFFFF;
+    border: 1px solid #DFE2E4; /*  */
     outline: none;
     padding: 15px 50px 15px 15px;
     font-weight: 400;
@@ -442,4 +442,8 @@ input[type="radio"]:checked+label p {
     font-size: 14px !important;
     margin-top: 18px !important;
     margin-right: 5px !important;
+}
+
+.wrap-data data-day{
+
 }

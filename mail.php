@@ -6,14 +6,15 @@ require 'libs/Exception.php';
 
 $title = "Тема письма";
 
-$c = true;
+// $c = true;
+//  /* " . (($c = !$c) ? '<tr>' : '<tr style="background-color: #ffffff;">') . " */
 
 // Формирование письма
 $title = "Заголовок";
 foreach ($_POST as $key => $value) {
     if ($value != "") {
         $body .= "
-    " . (($c = !$c) ? '<tr>' : '<tr style="background-color: #ffffff;">') . "
+        " . '<tr style="background-color: #ffffff;">' . "
       <td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
       <td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
     </tr>
@@ -50,5 +51,7 @@ try {
 
     $mail->send();
 } catch (Exception $e) {
+    echo $e->getMessage();
+    die();
     $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
