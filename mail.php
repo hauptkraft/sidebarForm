@@ -28,7 +28,8 @@ $body = "<table style='width: 100%;'>$body</table>";
 //  PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
-try {
+try 
+{
     $mail->isSMTP();
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
@@ -51,6 +52,7 @@ try {
     $mail->Body = $body;
 
     $mail->send();
-} catch (Exception $e) {
+} catch (Exception $e) 
+{
     $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
