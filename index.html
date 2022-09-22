@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="asset/inputmask.min.js"></script>
+    <script defer src="libs/just-validate.min.js"></script>
+    <script defer src="asset/script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu__side">
+            <div class="page__wrap">
+                <div class="page__name">
+                    <div class="img__wrap">
+                        <img class="img" src="asset/img/Interface.png" alt="smile">
+                    </div>
+                    <div class="profile">
+                        <h4>Михаил Мингалёв</h4>
+                        <h5>Покупатель</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="options__menu">
+                <a href="#" class="selected">
+                    <div class="option">
+                        <p>Мой профиль</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="option">
+                        <p>Status Club</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="option">
+                        <p>Заказы</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="option">
+                        <p>Избранные товары</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="option">
+                        <p>Отзывы о товарах</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="option">
+                        <p>Выход</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="form__wrap">
+            <div class="form__container">
+                <p>Мой профиль</p>
+                <nav>
+                    <ul class="form__header">
+                        <li><a href="#">Личные данные</a></li>
+                        <li><a href="#">Адреса доставки</a></li>
+                        <li><a href="#">Пароль</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <form action="#" class="form-fields" method="POST" id="form" autocomplete="off">  <!-- autocomplete="off" -->
+                <!-- при добавлении класса отобр ошибка* , при успехе меняю свойство hidden внутри класса -->
+                <!-- Ввод email -->
+                <div class="form-field__wrap error">
+                    <label class="form-field__label" for="email">E-mail</label><small> *</small>
+                    <div class="form-field">
+                        <input class="form-field-input input-mail" data-validate-field="email" type="email" placeholder="mingalyovuxcheck@gmail.com" value="" id="email" name="email" autocomplete="off">
+                        <div class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon3.svg" alt="image"></div>
+                    </div>
+                </div>
+                <!-- Ввод номера телефона -->
+                <div class="form-phone__wrap error">
+                    <div class="form-phone__container">
+                        <label class="form-field__label" for="phone">Номер телефона</label><small> *</small>
+                        <div class="form-phone">
+                            <input class="form-phone-input input-tel" data-validate-field="phone" type="phone" placeholder="+7 910 832 26 28" id="phone" name="phone" autocomplete="off">
+                            <div class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon3.svg" alt="image"></div>
+                        </div>
+                    </div>
+                    <div class="form-phone__container">
+                        <label class="form-field__label" for="phone">Дополнительный номер</label>
+                        <div class="form-phone">
+                            <input class="form-phone-input" data-validate-field="phone2" type="phone2" placeholder="" id="phone2" name="phone2">
+                        </div>
+                    </div>
+                </div>
+                <!-- Выбор фамилии -->
+                <div class="form-field__wrap error">
+                    <label class="form-field__label" for="surname">Фамилия</label><small> *</small>
+                    <div class="form-field">
+                        <input class="form-field-input" data-validate-field="surname" type="text" placeholder="Мингалев" value="" id="surname" name="surname" autocomplete="off">
+                        <div class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></div> <!--  убрал класс у img   -->
+                    </div>
+                </div>
+                <!-- Выбор имени -->
+                <div class="form-field__wrap error">
+                    <label class="form-field__label" for="name">Имя</label><small> *</small>
+                    <div class="form-field">
+                        <input class="form-field-input input-name" data-validate-field="name" type="text" placeholder="Михаил" value="" id="name" name="name">
+                        <div class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></div>
+                    </div>
+                </div>
+                <!-- Выбор отчества -->
+                <div class="form-field__wrap error">
+                    <label class="form-field__label" for="patronymic">Отчество</label><small> *</small>
+                    <div class="form-field">
+                        <input class="form-field-input" data-validate-field="patronymic" type="text" placeholder="Михайлович" id="patronymic" name="patronymic">
+                        <div class="form-btn__check"><img class="form-btn__image" src="asset/img/Icon2.png" alt="image"></div>
+                    </div>
+                </div>
+                <!-- Выбор даты -->
+                <div class="form-data__wrap">
+                    <label class="form-field__label" for="data">Дата рождения</label>
+                    <div class="form-data__container">
+                        <select class="wrap-data data-day" id="day" name="День_рождения" data-validate-field="day">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="23">23</option>
+                        </select>
+                        <select class="wrap-data data-month" id="month" name="Месяц_рождения" data-validate-field="month">
+                            <option value="Октября">Октября</option>
+                            <option value="Ноября">Ноября</option>
+                            <option value="Декабря">Декабря</option>
+                            <option value="Января">Января</option>
+                            <option value="Сентября">Сентября</option>
+                        </select>
+                        <select class="wrap-data data-year" id="year" name="Год_рождения" data-validate-field="year">
+                            <option value="1994">1994</option>
+                            <option value="1995">1995</option>
+                            <option value="1996">1996</option>
+                            <option value="1997">1997</option>
+                            <option value="1993">1993</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Выбор пола -->
+                <div class="form-field__wrap">
+                    <div class="gender__wrap">
+                        <label class="form-field__label" for="data">Пол</label>
+                        <div class="gender__container">
+                            <input type="radio" id="male" name="Пол" value="Мужчина"></input> <!--  data-validate-field="" -->
+                            <label class="gender-btn" for="male" id="male" value="male">
+                                <p>Мужской</p><img class="gender-img" src="asset/img/Icon2.png" alt="img">
+                            </label>
+                            <input type="radio" id="female" name="Пол" value="Женщина"></input>
+                            <label class="gender-btn" for="female" id="female" value="female">
+                                <p>Женский</p><img class="gender-img" src="asset/img/Icon2.png" alt="img">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="main-btn" type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

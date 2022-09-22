@@ -5,9 +5,9 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
+    /*text-decoration: none;*/
     list-style-type: none;
+    outline: none;
 }
 
 body{
@@ -16,6 +16,7 @@ body{
     background-color: #F6F6F6;
     display: flex;
     justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
 }
 
 input {
@@ -26,16 +27,22 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+input:-internal-autofill-selected {
+    background-color: none !important;
+}
+
 .container {
     width: 1366px;
     height: 100px;
     margin: 0 auto;
-    background-color: #706868;
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 .menu__side{
     width: 360px;
-    height: 100%;
     background: #FFFFFF;
     position: relative;
     color: black;
@@ -43,6 +50,7 @@ input::-webkit-inner-spin-button {
     transition: 500ms;
     height: 461px;
     border-radius: 5px;
+    margin-left: 4%;
 }
 
 .page__wrap{
@@ -97,7 +105,7 @@ input::-webkit-inner-spin-button {
 
 .options__menu .option{
     color: black;
-    padding: 20px 0px;
+    padding: 20px 0;
     display: flex;
     align-items: center;
     position: relative;
@@ -149,6 +157,7 @@ input::-webkit-inner-spin-button {
     width: 750px;
     background-color: white;
     border-radius: 5px;
+    margin-right: 4%;
 }
 
 .form__container {
@@ -199,33 +208,43 @@ input::-webkit-inner-spin-button {
     transition: .2s;
 }
 
+/* /////////////////////////////////////////   разделение форм   ///////////////////////////////////////////////////// */
+
 .form-fields {
     width: 420px;
     margin-left: 45px;
 }
 
-.form-field__wrap {
-    width: 420px;
-    margin-top: 15px;
-}
-
 .form-field {
+    display: flex;
+    width: 420px;
+    margin-top: 5px;
     border: 1px solid #DFE2E4;
     border-radius: 5px;
 }
 
 .form-field-input {
-    width: 375px;  
+    width: 370px;
     height: 50px;
     border-radius: 5px;
     margin-left: 15px;
+}
+/*/////////////////       сокрытие галочек в инпут      ///////////////////////*/
+
+.form-btn__check {
+    visibility: hidden;
+}
+
+
+.form-field__wrap.success .form-btn__check {
+    visibility: visible;
+    /*color: red;*/
 }
 
 .form-phone__wrap {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    
+    margin-top: 15px;
 }
 
 .form-phone__container {
@@ -233,19 +252,20 @@ input::-webkit-inner-spin-button {
 }
 
 .form-phone {
+    display: flex;
     border: 1px solid #DFE2E4;
     border-radius: 5px;
-    width: 200px;
+    width: 190px;
 }
 
 .form-phone-input {
-    width: 155px; 
+    width: 140px; 
     height: 50px;
-    margin-left: 15px;
+    margin-left: 14px;
 }
 
 .form-field__label {
-    font-family: 'Roboto';
+    /* margin-top: 15px; */
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -254,9 +274,31 @@ input::-webkit-inner-spin-button {
 }
 
 .form-btn__check {
+    margin-top: 17px;
+}
+/*///////////////////    there is checking img     ///////////////////////*/
+.form-field__wrap {
+    /*visibility: hidden;*/
     border: none;
     background: none;
+    margin-top: 15px;
 }
+
+.form-field__wrap small {
+    visibility: hidden;
+}
+
+.form-field__wrap.error small {
+    visibility: visible;
+    color: red;
+}
+
+.form-phone__wrap.error small {
+    visibility: visible;
+    color: red;
+}
+
+/*////////////////////////////////////*/
 
 .form-data__wrap {
     margin-top: 15px;
@@ -267,19 +309,22 @@ input::-webkit-inner-spin-button {
 }
 .data-day {
     flex: 3;
+    /* width: 120px; */
 }
 .data-month {
     flex: 4;
+    /* width: 160px; */
 }
 .data-year {
     flex: 3;
+    /* width: 120px; */
 }
 
 .wrap-data {
     margin-left: 10px;
     height: 50px;
     border-radius: 5px;
-    background: #FFFFFF;
+    /*background: #FFFFFF;*/
     border: 1px solid #DFE2E4;
     outline: none;
     padding: 15px 50px 15px 15px;
@@ -287,7 +332,7 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
     line-height: 20px;
     cursor: pointer;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
 }
 .wrap-data:first-child {
     margin-left: 0;
@@ -309,8 +354,8 @@ input::-webkit-inner-spin-button {
     position: relative;
 }
 .gender-btn p{
-    margin-top: 7px;
-    margin-left: 19px;
+    margin-top: 13px;
+    margin-left: 32px;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
@@ -320,14 +365,6 @@ input::-webkit-inner-spin-button {
 .gender-btn:last-child {
     margin-right: 0;
 }
-.gender-btn:hover {
-    border: 1px solid #FF7A00;
-}
-.gender-btn:hover p {
-    font-weight: 500;
-    color: #FF7A00;
-    margin-right: 40px;
-} 
 
 .gender-img {
     position: absolute;
@@ -339,6 +376,17 @@ input::-webkit-inner-spin-button {
 .gender-btn:hover img {
     display: block;
     right: 15px;
+}
+
+.gender-btn:hover {
+    border: 1px solid #FF7A00;
+    cursor: pointer;
+}
+.gender-btn:hover p {
+    font-weight: 500;
+    color: #FF7A00;
+    margin-left: 21px;  
+    cursor: pointer;
 }
 
 .main-btn {
@@ -353,7 +401,7 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.main-btn input[type="button"]{
+.main-btn input[type="submit"]{
     width: 270px;
     height: 50px;
     background: #FF7A00;
@@ -366,75 +414,32 @@ input::-webkit-inner-spin-button {
     font-size: 14px;
 }
 
-/* ////////////РАЗОБРАТЬСЯ БЛЯТЬ////////////// */
-.gender-btn:hover img {
-    display: block;
-    right: 15px;
-}
-
 /* ////////////////////// тут формы для пола ///////////////////////////// */
 
-input[type="radio"] {
-    display: none;
-}
 
 input[type="radio"]:checked+label  {
-    color: #FF7A00;
-    background-image: linear-gradient(to bottom, #d63d3d, #2ed58a);
-    /* display: block; */
-
+    color: #FF7A00 !important;
+    border: 1px solid #FF7A00;
+    display: block; 
 }
 
-  label[id="male"],
-  label[id="female"] {
-    display: block;
-    float: left;
-    padding: 5px 10px;
-    
-    font-size: 14px;
-    
-    background-image: linear-gradient(to bottom, rgb(195, 65, 65), rgb(46, 200, 74)) !important; 
-    border: 1px solid #244ea2;
-    cursor: pointer;
-  }
-  label[id="male"] {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-  }
-  label[id="female"] {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    margin-left: -1px;
-  }
-  label[id="male"]:hover,
-  label[id="female"]:hover .gender-btn img{
-    color:rgba(51, 197, 49, 0.5);
-    display: block;
-    /* right: 15px; */
-  }
-
-.loader_img {
-    background-color: #fff;
+input[type="radio"]:checked+label .gender-img {
+    display: block; 
+    right: 15px;
+    transition: 0.2s;
 }
 
-#form {
-    position: relative;
+input[type="radio"]:checked+label p {
+    color: #FF7A00 !important;
+    margin-left: 21px;
+    font-weight: 500;
+    transition: 0.2s;
 }
+/* //////////////////////// класс валидатора ///////////////////////////// */
 
-.loader {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:rgba(255, 255, 255, 0.9);
-    display: none;
-}
-
-.loader img {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-right: -50%;
-    /* transform: translate(-50%, -50%); */
+.just-validate-error-label {
+    color: red !important;
+    font-size: 14px !important;
+    margin-top: 18px !important;
+    margin-right: 5px !important;
 }
