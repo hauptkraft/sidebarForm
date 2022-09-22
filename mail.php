@@ -52,7 +52,8 @@ try
     $mail->Body = $body;
 
     $mail->send();
-} catch (Exception $e) 
+} 
+    catch (Exception $e) 
 {
     $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
 }
