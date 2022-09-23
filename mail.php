@@ -6,9 +6,6 @@ require 'libs/Exception.php';
 
 $title = "Тема письма";
 
-// $c = true;
-//  /* " . (($c = !$c) ? '<tr>' : '<tr style="background-color: #ffffff;">') . " */
-
 // Формирование письма
 $title = "Заголовок";
 foreach ($_POST as $key => $value) {
